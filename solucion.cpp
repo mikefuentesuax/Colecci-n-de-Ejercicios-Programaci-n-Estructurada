@@ -8,6 +8,13 @@ struct Estudiante {
     int edad;
     float promedio;
 };
+Estudiante copiarEstudiante(Estudiante est){
+        Estudiante nuevoEst;
+        strcpy(nuevoEst.nombre, est.nombre);
+        nuevoEst.edad = est.edad;
+        nuevoEst.promedio = est.promedio;
+        return nuevoEst;
+        }
 int main(){
     Estudiante estudiante1;
     strcpy(estudiante1.nombre, "Juan");
@@ -38,18 +45,9 @@ int main(){
 
     strcpy(dato.str, "C++");
     cout << "dato.str: " << dato.str << endl;
-
-    Estudiante copiarEstudiante(Estudiante est){
-        Estudiante nuevoEst;
-        strcpy(nuevoEst.nombre, est.nombre);
-        nuevoEst.edad = est.edad;
-        nuevoEst.promedio = est.promedio;
-        return nuevoEst;
-        }
-
-        typedef Estudiante Estudiante;
-
-        Estudiante estudiante3;
+    
+    
+            Estudiante estudiante3;
         strcpy(estudiante3.nombre, "Maria");
         estudiante3.edad = 22;
         estudiante3.promedio = 17.5;
@@ -61,7 +59,7 @@ int main(){
         imprimirEstudiante(estudiante1);
 
         auto modificarEstudiante = [](Estudiante &est){
-            est-> edad = 25;
+            est.edad = 25;
         };
         modificarEstudiante(estudiante1);
 
